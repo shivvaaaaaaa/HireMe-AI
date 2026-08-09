@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HireMe AI</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                HireMe <span>AI</span>
+            </div>
+
+            <button class="new-chat" onclick="newChat()">
+                + New Chat
+            </button>
+
+            <div class="sidebar-bottom">
+                <p>AI Resume Assistant</p>
+                <small>Ask anything about the candidate</small>
+            </div>
+
+        </aside>
+
+
+        <!-- Main Chat -->
+        <main class="chat-container">
+
+            <!-- Header -->
+            <header class="chat-header">
+                <div>
+                    <h2>HireMe AI</h2>
+                    <p>AI Candidate Assistant</p>
+                </div>
+
+                <div class="status">
+                    <span></span>
+                    Online
+                </div>
+            </header>
+
+
+            <!-- Messages -->
+            <section class="messages" id="messages">
+
+                <div class="welcome">
+                    <div class="welcome-icon">✦</div>
+
+                    <h1>How can I help you?</h1>
+
+                    <p>
+                        Ask me anything about the candidate's
+                        resume, skills, projects or experience.
+                    </p>
+
+                    <div class="suggestions">
+
+                        <button onclick="askSuggestion('Tell me about yourself')">
+                            Tell me about yourself
+                        </button>
+
+                        <button onclick="askSuggestion('What are your technical skills?')">
+                            What are your skills?
+                        </button>
+
+                        <button onclick="askSuggestion('What projects have you worked on?')">
+                            Tell me about your projects
+                        </button>
+
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- Input -->
+            <div class="input-area">
+
+                <div class="input-box">
+
+                    <textarea
+                        id="question"
+                        placeholder="Ask something about the candidate..."
+                        rows="1"
+                        onkeydown="handleKey(event)"
+                    ></textarea>
+
+                    <button id="sendBtn" onclick="sendMessage()">
+                        ➤
+                    </button>
+
+                </div>
+
+                <p class="disclaimer">
+                    HireMe AI answers based on the candidate's resume.
+                </p>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

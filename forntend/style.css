@@ -1,0 +1,304 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #212121;
+    color: #ffffff;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.app {
+    display: flex;
+    height: 100vh;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+    width: 250px;
+    background: #171717;
+    border-right: 1px solid #303030;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.logo span {
+    color: #10a37f;
+}
+
+.new-chat {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #444;
+    border-radius: 8px;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.new-chat:hover {
+    background: #2a2a2a;
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+    color: #aaa;
+    padding: 10px;
+}
+
+.sidebar-bottom p {
+    color: #ddd;
+    margin-bottom: 5px;
+}
+
+.sidebar-bottom small {
+    font-size: 12px;
+}
+
+
+/* =========================
+   CHAT
+========================= */
+
+.chat-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+
+/* Header */
+
+.chat-header {
+    height: 65px;
+    border-bottom: 1px solid #303030;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 25px;
+}
+
+.chat-header h2 {
+    font-size: 18px;
+}
+
+.chat-header p {
+    color: #999;
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+.status {
+    font-size: 13px;
+    color: #aaa;
+}
+
+.status span {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #10a37f;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+
+/* Messages */
+
+.messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 30px 20px 130px;
+}
+
+.welcome {
+    max-width: 700px;
+    margin: 100px auto;
+    text-align: center;
+}
+
+.welcome-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.welcome h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.welcome p {
+    color: #aaa;
+    line-height: 1.5;
+}
+
+.suggestions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.suggestions button {
+    background: #2a2a2a;
+    border: 1px solid #444;
+    color: #ddd;
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.suggestions button:hover {
+    background: #333;
+}
+
+
+/* Messages */
+
+.message {
+    max-width: 800px;
+    margin: 0 auto 25px;
+    display: flex;
+    gap: 12px;
+}
+
+.avatar {
+    min-width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.user-avatar {
+    background: #555;
+}
+
+.ai-avatar {
+    background: #10a37f;
+}
+
+.message-content {
+    line-height: 1.6;
+    white-space: pre-wrap;
+    padding-top: 4px;
+}
+
+.user-message {
+    background: #2f2f2f;
+    padding: 12px 15px;
+    border-radius: 10px;
+}
+
+
+/* Input */
+
+.input-area {
+    position: fixed;
+    bottom: 0;
+    left: 250px;
+    right: 0;
+    padding: 20px 20px 12px;
+    background: linear-gradient(
+        transparent,
+        #212121 25%
+    );
+}
+
+.input-box {
+    max-width: 800px;
+    margin: auto;
+    background: #2f2f2f;
+    border: 1px solid #555;
+    border-radius: 14px;
+    display: flex;
+    align-items: flex-end;
+    padding: 8px 10px;
+}
+
+.input-box textarea {
+    flex: 1;
+    resize: none;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    padding: 10px;
+    font-size: 15px;
+    font-family: inherit;
+    max-height: 120px;
+}
+
+.input-box textarea::placeholder {
+    color: #888;
+}
+
+.input-box button {
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 8px;
+    background: #10a37f;
+    color: white;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.input-box button:hover {
+    opacity: 0.85;
+}
+
+.input-box button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.disclaimer {
+    text-align: center;
+    color: #777;
+    font-size: 11px;
+    margin-top: 8px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .sidebar {
+        display: none;
+    }
+
+    .input-area {
+        left: 0;
+    }
+
+    .welcome {
+        margin-top: 70px;
+    }
+
+    .welcome h1 {
+        font-size: 24px;
+    }
+}
