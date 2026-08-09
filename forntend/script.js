@@ -1,4 +1,4 @@
-const API_URL = "http://127.0.0.1:8000";
+const API_URL = "https://hireme-ai-iivb.onrender.com";
 
 const messages = document.getElementById("messages");
 const questionInput = document.getElementById("question");
